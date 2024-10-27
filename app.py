@@ -141,17 +141,17 @@ with st.container(border=False, height=500, key="university"):
         with tabs[0]:
             subtabs = st.tabs(["with Beds", "with Baths", "with Size", "with Age of house"])
             with subtabs[0]:
-                st.plotly_chart(px.histogram(towndata, x="Beds", y="Sale_amount", height=400, color_discrete_sequence=["darkred"]))
+                st.plotly_chart(px.histogram(towndata, x="Beds", y="Sale_amount", height=380, color_discrete_sequence=["darkred"]))
             with subtabs[1]:
-                st.plotly_chart(px.histogram(towndata, x="Baths", y="Sale_amount", height=400, color_discrete_sequence=["darkred"]))
+                st.plotly_chart(px.histogram(towndata, x="Baths", y="Sale_amount", height=380, color_discrete_sequence=["darkred"]))
             with subtabs[2]:
-                st.plotly_chart(px.histogram(towndata, x="Sqft_home", y="Sale_amount", height=400, nbins=20, color_discrete_sequence=["darkred"]))
+                st.plotly_chart(px.histogram(towndata, x="Sqft_home", y="Sale_amount", height=380, nbins=20, color_discrete_sequence=["darkred"]))
             with subtabs[3]:
-                st.plotly_chart(px.histogram(towndata, x="Age_at_sale", y="Sale_amount", height=400, nbins=20, color_discrete_sequence=["darkred"]))
+                st.plotly_chart(px.histogram(towndata, x="Age_at_sale", y="Sale_amount", height=380, nbins=20, color_discrete_sequence=["darkred"]))
         
         with tabs[1]:
             temp = data.groupby('Sale_date')['Sale_amount'].sum().reset_index()
-            st.plotly_chart(px.line(temp, x="Sale_date", y="Sale_amount", color_discrete_sequence=["darkred"]))
+            st.plotly_chart(px.line(temp, x="Sale_date", y="Sale_amount", height=400, color_discrete_sequence=["darkred"]))
         
         with tabs[2]:
             X = towndata[["Beds", "Baths", "Sqft_home", "Age_at_sale"]]
