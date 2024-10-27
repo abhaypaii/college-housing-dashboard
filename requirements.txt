@@ -1,4 +1,4 @@
-pstreamlit==1.39.0
+streamlit==1.39.0
 pandas==2.2.3
 datetime==5.5
 millify==0.1.1
